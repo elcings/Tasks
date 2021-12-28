@@ -1,0 +1,12 @@
+Select ci.Name asCityName,co.Name asCountryName from Contact  con
+inner join City ci on con.CityId=ci.ID
+inner join Country co on co.ID=ci.CountryId and co.Name='UA'
+
+
+Select Name,Count(*) from Contact group by Name Having Count(*)>1
+
+
+
+Select c.ID,c.Name as ContactName from Contact c 
+ join (select Name from Contact  group by Name Having Count(*)>1) con
+ on c.Name=con.Name
