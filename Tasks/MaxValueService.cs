@@ -32,8 +32,7 @@ namespace Tasks
                     int sum = list[l] + list[r];
                     if (sum == 0)
                     {
-                        res = Math.Max(res, Math.Max(list[l], list[r]));
-                        return res;
+                        return list[r];
                     }
                     if (sum < 0)
                     {
